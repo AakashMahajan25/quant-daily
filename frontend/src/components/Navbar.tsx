@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="w-full border-b border-gray-800 bg-black sticky top-0 z-50">
       <div className="max-w-4xl mx-auto px-6 py-3 flex items-center justify-between">
-        <div className="text-lg font-semibold tracking-tight text-white">📰 QuantBlog</div>
+        <div className="text-lg font-semibold tracking-tight text-white">📰 QuantDaily</div>
         <ul className="flex space-x-4 text-sm font-medium">
           {links.map((link) => (
             <li key={link.href}>
