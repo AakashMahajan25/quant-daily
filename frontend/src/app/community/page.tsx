@@ -1,27 +1,27 @@
 import { client } from "@/lib/sanity";
-import { aakashPostsQuery } from "@/lib/queries";
+import { communityPostsQuery } from "@/lib/queries";
 import { format } from "date-fns";
 import Link from "next/link";
-
-export const revalidate = 60; // ISR every 60 seconds
 
 type Post = {
   _id: string;
   title: string;
   author: string;
-  slug: { current: string };
+  slug: { current: string }
   publishedAt: string;
 };
 
-export default async function HomePage() {
-  const posts: Post[] = await client.fetch(aakashPostsQuery);
+export const revalidate = 60;
+
+export default async function CommunityPage() {
+  const posts: Post[] = await client.fetch(communityPostsQuery);
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-10 bg-black text-white">
-      <h1 className="text-4xl font-bold mb-6">📈 Aakash's Quant Journals</h1>
+    <div className="max-w-3xl mx-auto px-6 py-10">
+      <h1 className="text-4xl font-bold mb-6">🧑‍🤝‍🧑 Community Posts</h1>
 
       {posts.length === 0 && (
-        <p className="text-gray-400">No posts yet. Come back tomorrow 🙂</p>
+        <p className="text-gray-500">No community blogs yet. Be the first at /write!</p>
       )}
 
       <ul className="space-y-6">

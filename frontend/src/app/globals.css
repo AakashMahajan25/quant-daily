@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* styles/globals.css or in your Tailwind config if using Tailwind */
+
+.prose pre {
+  background-color: #1e1e1e; /* dark background */
+  color: #dcdcdc;            /* light text */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+}
+
+.prose code {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+}
+
